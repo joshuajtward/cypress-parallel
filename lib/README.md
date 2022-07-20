@@ -49,9 +49,11 @@ In your `package.json` add a new script:
 
 Sample:
 
+```bash
+-a '--config baseUrl=http://localhost:3000,video=false'
 ```
--a '\"--config baseUrl=http://localhost:3000\"'
-```
+
+Note: you don't need to wrap the arguments in quotes, it will get parsed and passed along to Cypress as `cypress run ... --config baseUrl="http://localhost:3000",video="false"`
 
 ## Launch the new script
 
@@ -64,7 +66,7 @@ or
 Run with npx (no package installation needed)
 
 ```
-npx cy:parallel -s cy:run -t 2 -d <your-cypress-specs-folder> -a '\"<your-cypress-cmd-args>\"'
+npx cy:parallel -s cy:run -t 2 -d <your-cypress-specs-folder> -a '<your-cypress-cmd-args>'
 ```
 
 ### Scripts options
